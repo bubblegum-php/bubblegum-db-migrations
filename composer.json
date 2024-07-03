@@ -1,0 +1,33 @@
+{
+    "name": "bubblegum-php/bubblegum-db-migrations",
+    "description": "Database migrations module for BUBBLEGUM.",
+    "keywords": ["bubblegum", "bubblegum-db", "bubblegum-database", "bubblegum-db-migrations", "migrations"],
+    "homepage": "https://github.com/bubblegum-php/bubblegum-db-migrations",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LankryF",
+            "email": "lankrf@gmail.com"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/bubblegum-php/bubblegum-db-migrations"
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "bubblegum-php/bubblegum-db": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bubblegum\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/bubblegum-php/bubblegum-db.git"
+        }
+  ]
+}

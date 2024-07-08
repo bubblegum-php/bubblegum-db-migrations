@@ -38,9 +38,9 @@ class Column
     {}
 
     /**
-     * @return bool
+     * @return string
      */
-    public function toSqlPart(): bool
+    public function toSqlPart(): string
     {
         return $this->name . ' ' . $this->type
             . (!$this->nullable ? ' NOT NULL' : '')

@@ -69,68 +69,33 @@ class Blueprint
         return $this->addColumn($column);
     }
 
+    // INTEGERS
+
     /**
      * @param string $name
      * @return Column
      */
-    public function bigint(string $name): Column
+    public function int2(string $name): Column
     {
-        return $this->createAndAddColumn($name, 'bigint');
+        return $this->createAndAddColumn($name, 'int2');
     }
 
     /**
      * @param string $name
      * @return Column
      */
-    public function bigserial(string $name): Column
+    public function int4(string $name): Column
     {
-        return $this->createAndAddColumn($name, 'bigserial');
+        return $this->createAndAddColumn($name, 'int4');
     }
 
     /**
      * @param string $name
      * @return Column
      */
-    public function boolean(string $name): Column
+    public function int8(string $name): Column
     {
-        return $this->createAndAddColumn($name, 'boolean');
-    }
-
-    /**
-     * @param string $name
-     * @param int $length
-     * @return Column
-     */
-    public function character(string $name, int $length): Column
-    {
-        return $this->createAndAddColumn($name, "bigint($length)");
-    }
-
-    /**
-     * @param string $name
-     * @return Column
-     */
-    public function int(string $name): Column
-    {
-        return $this->createAndAddColumn($name, 'int');
-    }
-
-    /**
-     * @param string $name
-     * @return Column
-     */
-    public function money(string $name): Column
-    {
-        return $this->createAndAddColumn($name, 'money');
-    }
-
-    /**
-     * @param string $name
-     * @return Column
-     */
-    public function real(string $name): Column
-    {
-        return $this->createAndAddColumn($name, 'real');
+        return $this->createAndAddColumn($name, 'int8');
     }
 
     /**
@@ -139,7 +104,65 @@ class Blueprint
      */
     public function smallint(string $name): Column
     {
-        return $this->createAndAddColumn($name, 'smallint');
+        return $this->int2($name);
+    }
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function int(string $name): Column
+    {
+        return $this->int4($name);
+    }
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function bigint(string $name): Column
+    {
+        return $this->int8($name);
+    }
+
+    // BOOLEAN
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function bool(string $name): Column
+    {
+        return $this->createAndAddColumn($name, 'bool');
+    }
+
+    // SERIALS
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function serial2(string $name): Column
+    {
+        return $this->createAndAddColumn($name, 'serial2');
+    }
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function serial4(string $name): Column
+    {
+        return $this->createAndAddColumn($name, 'serial4');
+    }
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function serial8(string $name): Column
+    {
+        return $this->createAndAddColumn($name, 'serial8');
     }
 
     /**
@@ -148,7 +171,7 @@ class Blueprint
      */
     public function smallserial(string $name): Column
     {
-        return $this->createAndAddColumn($name, 'smallserial');
+        return $this->serial2($name);
     }
 
     /**
@@ -157,7 +180,90 @@ class Blueprint
      */
     public function serial(string $name): Column
     {
-        return $this->createAndAddColumn($name, 'serial');
+        return $this->serial4($name);
+    }
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function bigserial(string $name): Column
+    {
+        return $this->serial8($name);
+    }
+
+        /**
+     * @return Column
+     */
+    public function smallid(): Column
+    {
+        return $this->serial2('id');
+    }
+
+    /**
+     * @return Column
+     */
+    public function id(): Column
+    {
+        return $this->serial4('id');
+    }
+
+    /**
+     * @return Column
+     */
+    public function bigid(): Column
+    {
+        return $this->serial8('id');
+    }
+
+    // FLOATS
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function float4(string $name): Column
+    {
+        return $this->createAndAddColumn($name, 'float4');
+    }
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function float8(string $name): Column
+    {
+        return $this->createAndAddColumn($name, 'float8');
+    }
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function float(string $name): Column
+    {
+        return $this->float4($name);
+    }
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function doublePrecision(string $name): Column
+    {
+        return $this->float8($name);
+    }
+
+    // CHARACTERS
+
+    public function char(string $name, int $length = 128): Column
+    {
+        return $this->createAndAddColumn($name, "char($length)");
+    }
+
+    public function varchar(string $name, int $length = 128): Column
+    {
+        return $this->createAndAddColumn($name, "varchar($length)");
     }
 
     /**
@@ -168,6 +274,41 @@ class Blueprint
     {
         return $this->createAndAddColumn($name, 'text');
     }
+
+    // BIT
+
+    /**
+     * @param string $name
+     * @param int $length
+     * @return Column
+     */
+    public function bit(string $name, int $length = 128): Column
+    {
+        return $this->createAndAddColumn($name, "bit($length)");
+    }
+
+    /**
+     * @param string $name
+     * @param int $length
+     * @return Column
+     */
+    public function varbit(string $name, int $length = 128): Column
+    {
+        return $this->createAndAddColumn($name, "varbit($length)");
+    }
+
+    // MONEY
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function money(string $name): Column
+    {
+        return $this->createAndAddColumn($name, 'money');
+    }
+
+    // JSON AND XML
 
     /**
      * @param string $name
@@ -185,5 +326,41 @@ class Blueprint
     public function xml(string $name): Column
     {
         return $this->createAndAddColumn($name, 'xml');
+    }
+
+    // TIME
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function time(string $name): Column
+    {
+        return $this->createAndAddColumn($name, 'time');
+    }
+
+    /**
+     * @param string $name
+     * @return Column
+     */
+    public function timestamp(string $name): Column
+    {
+        return $this->createAndAddColumn($name, 'timestamp');
+    }
+
+    /**
+     * @return Column
+     */
+    public function createdAt(): Column
+    {
+        return $this->timestamp('created_at')->defaultValue('CURRENT_TIMESTAMP');
+    }
+
+    /**
+     * @return Column
+     */
+    public function updatedAt(): Column
+    {
+        return $this->timestamp('updated_at')->defaultValue('CURRENT_TIMESTAMP');
     }
 }

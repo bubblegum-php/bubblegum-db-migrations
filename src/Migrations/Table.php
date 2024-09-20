@@ -17,4 +17,9 @@ class Table
         $blueprintFunction($blueprint);
         DB::createTable($tableName, $blueprint->columnSqlParts());
     }
+
+    public static function drop(string $tableName): void
+    {
+        DB::dropTable($tableName);
+    }
 }

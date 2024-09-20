@@ -256,12 +256,12 @@ class Blueprint
 
     // CHARACTERS
 
-    public function char(string $name, int $length = 128): Column
+    public function char(string $name, int $length = 255): Column
     {
         return $this->createAndAddColumn($name, "char($length)");
     }
 
-    public function varchar(string $name, int $length = 128): Column
+    public function varchar(string $name, int $length = 255): Column
     {
         return $this->createAndAddColumn($name, "varchar($length)");
     }
@@ -282,7 +282,7 @@ class Blueprint
      * @param int $length
      * @return Column
      */
-    public function bit(string $name, int $length = 128): Column
+    public function bit(string $name, int $length = 255): Column
     {
         return $this->createAndAddColumn($name, "bit($length)");
     }

@@ -5,6 +5,7 @@ namespace Bubblegum\Commands\BubblegumDbMigrations;
 use Bubblegum\Candyman\Command;
 use Bubblegum\Migrations\Migration;
 use Bubblegum\Exceptions\CommandException;
+use Bubblegum\Database\DB;
 
 class Migrate extends Command
 {
@@ -12,6 +13,7 @@ class Migrate extends Command
     protected array $argsNames = ['up|down'];
     public function handle($args): void
     {
+        DB::initPDO();
         if (!in_array($args[0], ['up', 'down'])) {
             throw new CommandException('Invalid migration action (only up and down are allowed)');
         }

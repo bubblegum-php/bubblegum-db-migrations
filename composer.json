@@ -17,17 +17,26 @@
         "php": "^8.0"
     },
     "require-dev": {
-        "bubblegum-php/bubblegum-db": "@dev"
+        "bubblegum-php/bubblegum-db": "@dev",
+        "bubblegum-php/bubblegum-candyman": "@dev"
     },
     "autoload": {
+        "files": [
+            "src/commands.php"
+        ],
         "psr-4": {
-            "Bubblegum\\": "src/"
+            "Bubblegum\\": "src/",
+            "Bubblegum\\Commands\\BubblegumDbMigrations\\": "src/Commands/"
         }
     },
     "repositories": [
         {
             "type": "git",
             "url": "https://github.com/bubblegum-php/bubblegum-db.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/bubblegum-php/bubblegum-candyman.git"
         }
   ]
 }

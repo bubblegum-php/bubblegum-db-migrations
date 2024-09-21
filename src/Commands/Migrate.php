@@ -6,7 +6,7 @@ use Bubblegum\Candyman\Command;
 use Bubblegum\Migrations\Migration;
 use Bubblegum\Exceptions\CommandException;
 
-class MakeMigration extends Command
+class Migrate extends Command
 {
     protected string $info = 'migrates all migrations';
     protected array $argsNames = ['up|down'];

@@ -37,7 +37,7 @@ return new class extends Migration
 
 PHP;
         file_put_contents(
-            implode(DIRECTORY_SEPARATOR, ['database', 'Migrations', date('Y_m_d') . "$args[0].php"]),
+            implode(DIRECTORY_SEPARATOR, ['database', 'Migrations', date('Y_m_d') . "_$args[0].php"]),
             $code
         );
     }

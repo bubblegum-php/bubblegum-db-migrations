@@ -3,6 +3,7 @@
 namespace Bubblegum\Commands\BubblegumDbMigrations;
 
 use Bubblegum\Candyman\Command;
+use Bubblegum\Candyman\Console;
 use Bubblegum\Migrations\Migration;
 use Bubblegum\Exceptions\CommandException;
 use Bubblegum\Database\DB;
@@ -25,12 +26,15 @@ class Migrate extends Command
             switch ($args[0]) {
                 case 'up':
                     $migration->up();
+                    Console::ok("Migrated $file up.");
                     break;
                 case 'down':
                     $migration->down();
+                    Console::ok("Migrated $file down.");
                     break;
             }
         }
+        Console::done('Migrated all migrations.');
     }
 
 }

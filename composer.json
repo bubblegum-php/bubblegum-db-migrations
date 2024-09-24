@@ -18,7 +18,8 @@
     },
     "require-dev": {
         "bubblegum-php/bubblegum-db": "@dev",
-        "bubblegum-php/bubblegum-candyman": "@dev"
+        "bubblegum-php/bubblegum-candyman": "@dev",
+        "bubblegum-php/bubblegum-environment": "@dev"
     },
     "autoload": {
         "files": [
@@ -33,6 +34,10 @@
         {
             "type": "git",
             "url": "https://github.com/bubblegum-php/bubblegum-db.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/bubblegum-php/bubblegum-environment.git"
         },
         {
             "type": "git",

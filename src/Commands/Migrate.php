@@ -15,7 +15,7 @@ class Migrate extends Command
     public function handle($args): void
     {
         DB::initPDO();
-        if (!in_array($args[0], ['up', 'down'])) {
+        if (sizeof($args) < 1 || !in_array($args[0], ['up', 'down'])) {
             throw new CommandException('Invalid migration action (only up and down are allowed)');
         }
         $folder = implode(DIRECTORY_SEPARATOR, ['database', 'Migrations']) . DIRECTORY_SEPARATOR;

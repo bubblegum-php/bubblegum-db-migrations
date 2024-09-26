@@ -27,19 +27,5 @@
             "Bubblegum\\": "src/",
             "Bubblegum\\Commands\\BubblegumDbMigrations\\": "src/Commands/"
         }
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/bubblegum-php/bubblegum-db.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/bubblegum-php/bubblegum-environment.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/bubblegum-php/bubblegum-candyman.git"
-        }
-  ]
+    }
 }

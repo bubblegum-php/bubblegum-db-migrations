@@ -14,12 +14,10 @@
         "source": "https://github.com/bubblegum-php/bubblegum-db-migrations"
     },
     "require": {
-        "php": "^8.0"
-    },
-    "require-dev": {
-        "bubblegum-php/bubblegum-db": "@dev",
-        "bubblegum-php/bubblegum-candyman": "@dev",
-        "bubblegum-php/bubblegum-environment": "@dev"
+        "php": "^8.0",
+        "bubblegum-php/bubblegum-db": "1.0.*",
+        "bubblegum-php/bubblegum-candyman": "1.0.*",
+        "bubblegum-php/bubblegum-environment": "1.0.*"
     },
     "autoload": {
         "files": [
